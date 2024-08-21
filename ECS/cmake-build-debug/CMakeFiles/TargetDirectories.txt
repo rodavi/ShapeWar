@@ -1,0 +1,3 @@
+/home/rodrigo/Documents/Code/Cpp/GameDev/ECS/cmake-build-debug/CMakeFiles/ECS.dir
+/home/rodrigo/Documents/Code/Cpp/GameDev/ECS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/rodrigo/Documents/Code/Cpp/GameDev/ECS/cmake-build-debug/CMakeFiles/rebuild_cache.dir

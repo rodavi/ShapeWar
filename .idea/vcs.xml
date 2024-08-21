@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ECS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-sfml-project-master" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-sfml-project-master/build/_deps/sfml-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-sfml-project-master/cmake-build-debug/_deps/sfml-src" vcs="Git" />
+  </component>
+</project>
