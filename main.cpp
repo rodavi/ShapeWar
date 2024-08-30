@@ -1,7 +1,11 @@
+#include "read_file.h"
 #include <iostream>
+
+#include "Game.h"
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    Game g("/home/rodrigo/Documents/Code/Cpp/GameDev/ECS/config.txt");
+    g.run();
+
 }

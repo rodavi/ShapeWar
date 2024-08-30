@@ -12,18 +12,14 @@ void EntityManager::update() {
         m_entities.push_back(e);
         m_entityMap[e->tag()].push_back(e);
     }
-    // if e is dead, remove it from m_entities
-    m_entities.erase(
-        std::remove_if(m_entities.begin(), m_entities.end(),
-            [](Entity* e){return !e->alive();}),
-            m_entities.end());
-    // if e is dead, remove it from m_entityMap[e->tag()]
-    m_entityMap.erase(
-        std::remove_if(m_entityMap.begin(), m_entityMap.end(),
-            [](Entity* e){return !e->alive();}),
-            m_entityMap.end());
 
     m_toAdd.clear();
+
+    removeDeadEntities(m_entities);
+    removeDeadEntities(m_entityMap["bullet"]);
+    removeDeadEntities(m_entityMap["enemy"]);
+    removeDeadEntities(m_entityMap["smallEnemies"]);
+
 }
 
 std::shared_ptr<Entity> EntityManager::addEntity(const std::string& tag){
@@ -37,6 +33,13 @@ std::shared_ptr<Entity> EntityManager::addEntity(const std::string& tag){
     // m_entityMap[tag].push_back(e);
     // return the shared pointer pointing to that entity
     return e;
+}
+
+void EntityManager::removeDeadEntities(EntityVec& vec) {
+    vec.erase(
+        std::remove_if(vec.begin(), vec.end(),
+            [](std::shared_ptr<Entity> e){return !e->alive();}),
+            vec.end());
 }
 
 EntityVec& EntityManager::getEntities() {

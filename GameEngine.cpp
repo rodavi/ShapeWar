@@ -7,10 +7,10 @@
 
 void GameEngine::mainLoop() {
     m_entityManager.update();
-    sUserInput();
+    /*sUserInput();
     sMovemment();
     sCollision();
-    sRender();
+    sRender();*/
     m_currentFrame++;
 }
 

@@ -3,7 +3,7 @@
 //
 #include <memory>
 #include <string>
-
+#include "components.h"
 
 #ifndef ENTITY_H
 #define ENTITY_H
@@ -20,13 +20,19 @@ class Entity {
 
     public:
     std::shared_ptr<CTransform> cTransform;
-    std::shared_ptr<CName> cName;
+    std::shared_ptr<CInput> cInput;
     std::shared_ptr<CShape> cShape;
-    std::shared_ptr<CBBox> cBBox;
+    //std::shared_ptr<CBBox> cBBox;
+    std::shared_ptr<CCollision> cCollision;
+    std::shared_ptr<CLifespan> cLifespan;
+    std::shared_ptr<CScore> cScore;
 
     const std::string& tag(){return m_tag;}
-    bool alive();
+    bool alive() {
+        return m_alive;
+    }
     void destroy(){m_alive = false;}
+    const size_t id(){return m_id;}
 };
 
 
